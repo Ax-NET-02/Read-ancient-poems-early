@@ -1,0 +1,17 @@
+body {
+    background-image: url('../images/bcpic.png');
+    background-position: center; /* 将背景图片居中 */
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.me{
+    background-color: #F0EFE2;
+    margin-top: 2%;
+    border-radius: 20px; /* 将四个角都设置为 20px 的圆角 */
+
+    width: 60%;
+}
