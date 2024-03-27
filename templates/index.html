@@ -10,22 +10,40 @@
 </head>
 
 <body>
-    <div class="box">
-        <div class="me">
-            <div style="margin-top: 2%;" class="text-center">
-                <!-- 标题和作者 -->
-                <h1>击壤歌</h1>
-                <br>
-                <span>佚名-〔先秦〕</span>
-                <br>
-                <br>
-                <h4>日出而作，日入而息。</h4>
-                <h4>凿井而饮，耕田而食。</h4>
-                <h4>帝力于我何有哉！</h4>
-                <br>
+    {% for verses in verse %}
+        <div class="box">
+            <div class="me">
+                <div style="margin-top: 2%;" class="text-center">
+                    <!-- 标题和作者 -->
+                    
+                    <h2><strong>{{ verses['title'] }}</strong></h2>
+                    <br>
+                    <span class="text-secondary">{{ verses['author'] }}</span>
+                    <br>
+                    <br>
+                    <div id="poemText{{ verses['poem_id'] }}">
+                        <span>
+                            <strong>{{ verses.poem_text }}</strong>
+                        </span>
+                    </div>
+                    <br>
+                </div>
             </div>
         </div>
-    </div>
+        
+        <script>
+            // 获取诗句文本元素
+            var poemText = document.getElementById('poemText{{ verses.poem_id }}');
+             // 获取诗句文本内容
+             var textContent = poemText.textContent;
+             // 在<br>处插入换行符
+             var newTextContent = textContent.replace(/<br>/g, '<br>\n');
+             // 更新诗句文本内容
+             poemText.innerHTML = newTextContent;
+             // 修改文字大小
+             poemText.style.fontSize = '22px';
+         </script>
+    {% endfor %}
 </body>
 
 </html>

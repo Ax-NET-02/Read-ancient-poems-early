@@ -13,5 +13,10 @@ body {
     margin-top: 2%;
     border-radius: 20px; /* 将四个角都设置为 20px 的圆角 */
 
-    width: 60%;
+    width: 80%;
+}
+
+.poem-text {
+    margin-top: 10px;
+    white-space: pre-line; /* 保留换行符 */
 }

@@ -20,7 +20,7 @@ html_content = response.text
 span_tags = re.findall(r'<span.*?>(.*?)</span>', html_content)
 
 # 创建一个 CSV 文件并写入标题行
-with open('../data/poems.csv', 'w', encoding='utf-8', newline='') as csvfile:
+with open('../database/poem.csv', 'w', encoding='utf-8', newline='') as csvfile:
     fieldnames = ['title', 'author', 'poembr']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
@@ -46,7 +46,7 @@ with open('../data/poems.csv', 'w', encoding='utf-8', newline='') as csvfile:
                 poem = poem_match.group(1).strip()
 
                 # 移除诗句中的 <br> 标签
-                poembr = re.sub(r'<p\s*\/?>|<br\s*\/?>', '\n', poem)
+                poembr = re.sub(r'<p[^>]*>|</p>', '\n', poem)
 
                 authorimg = re.sub(r'<img\s[^>]*>', '', author)
                 
