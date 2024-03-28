@@ -13,7 +13,7 @@ body {
     margin-top: 2%;
     border-radius: 20px; /* 将四个角都设置为 20px 的圆角 */
 
-    width: 80%;
+    width: 100%;
 }
 
 .poem-text {

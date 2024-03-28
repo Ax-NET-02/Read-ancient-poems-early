@@ -16,9 +16,9 @@
                 <div style="margin-top: 2%;" class="text-center">
                     <!-- 标题和作者 -->
                     
-                    <h2><strong>{{ verses['title'] }}</strong></h2>
+                    <h1><strong>{{ verses['title'] }}</strong></h1>
                     <br>
-                    <span class="text-secondary">{{ verses['author'] }}</span>
+                    <span class="text-secondary" style="font-size: 20px;">{{ verses['author'] }}</span>
                     <br>
                     <br>
                     <div id="poemText{{ verses['poem_id'] }}">
@@ -41,7 +41,7 @@
              // 更新诗句文本内容
              poemText.innerHTML = newTextContent;
              // 修改文字大小
-             poemText.style.fontSize = '22px';
+             poemText.style.fontSize = '40px';
          </script>
     {% endfor %}
 </body>
