@@ -36,7 +36,7 @@ pip install -r requirements.txt
 mysql -u root -p
 ```
 
-(3).创建数据库
+(3).创建数据库 可以在软件中运行sql脚本 "poems.sql"
 
 ```sql
 -- 删除已有的数据库
